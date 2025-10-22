@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Morpion - Tic Tac Toe</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Morpion</h1>
+        
+        <div class="game-mode-selector">
+            <label for="game-mode">Mode de jeu :</label>
+            <select id="game-mode">
+                <option value="two-players">2 Joueurs</option>
+                <option value="vs-computer">Contre l'ordinateur</option>
+            </select>
+        </div>
+        
+        <div class="difficulty-selector" id="difficulty-selector" style="display: none;">
+            <label for="difficulty">Difficulté :</label>
+            <select id="difficulty">
+                <option value="easy">Facile</option>
+                <option value="medium" selected>Moyen</option>
+                <option value="hard">Difficile</option>
+            </select>
+        </div>
+        
+        <div class="score-board">
+            <div class="score-item">
+                <span class="player">Joueur X</span>
+                <span class="score" id="score-x">0</span>
+            </div>
+            <div class="score-item">
+                <span class="player">Joueur O</span>
+                <span class="score" id="score-o">0</span>
+            </div>
+            <div class="score-item">
+                <span class="player">Matchs nuls</span>
+                <span class="score" id="score-draw">0</span>
+            </div>
+        </div>
+        
+        <div class="game-stats">
+            <div class="stat-item">
+                <span class="stat-label">Parties jouées</span>
+                <span class="stat-value" id="games-played">0</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">Temps de jeu</span>
+                <span class="stat-value" id="game-time">00:00</span>
+            </div>
+        </div>
+
+        <div class="game-status" id="game-status">
+            Tour du joueur X
+        </div>
+
+        <div class="game-board" id="game-board">
+            <div class="cell" data-index="0"></div>
+            <div class="cell" data-index="1"></div>
+            <div class="cell" data-index="2"></div>
+            <div class="cell" data-index="3"></div>
+            <div class="cell" data-index="4"></div>
+            <div class="cell" data-index="5"></div>
+            <div class="cell" data-index="6"></div>
+            <div class="cell" data-index="7"></div>
+            <div class="cell" data-index="8"></div>
+        </div>
+ 
+        <div class="game-controls">
+            <button class="restart-btn" id="restart-btn">Rejouer</button>
+            <button class="undo-btn" id="undo-btn" disabled>Annuler</button>
+            <button class="hint-btn" id="hint-btn" disabled>💡 Aide</button>
+        </div>
+        
+        <div class="game-history" id="game-history" style="display: none;">
+            <h3>Historique des parties</h3>
+            <div class="history-list" id="history-list"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
